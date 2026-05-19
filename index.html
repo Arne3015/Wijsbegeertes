@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wijsbegeerte Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">843 gesloten vragen</p>
+          <h1>Wijsbegeerte Quiz</h1>
+        </div>
+        <div class="score-strip" aria-label="Score">
+          <span><strong id="answeredCount">0</strong> beantwoord</span>
+          <span><strong id="correctCount">0</strong> juist</span>
+          <span><strong id="streakCount">0</strong> reeks</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="toolbar" aria-label="Filters">
+          <label class="field">
+            <span>Hoofdstuk</span>
+            <select id="chapterFilter"></select>
+          </label>
+          <label class="field">
+            <span>Type</span>
+            <select id="typeFilter"></select>
+          </label>
+          <button class="secondary" id="shuffleButton" type="button">Nieuwe vraag</button>
+          <button class="secondary subtle" id="resetButton" type="button">Reset score</button>
+        </section>
+
+        <section class="question-panel" aria-live="polite">
+          <div class="question-meta">
+            <span id="chapterBadge"></span>
+            <span id="categoryBadge"></span>
+            <span id="progressBadge"></span>
+          </div>
+
+          <h2 id="questionText"></h2>
+          <div class="options" id="optionsList"></div>
+
+          <div class="action-row">
+            <button class="primary" id="checkButton" type="button" disabled>Controleer</button>
+            <button class="secondary" id="nextButton" type="button">Volgende</button>
+          </div>
+
+          <div class="result" id="resultPanel" hidden></div>
+          <button class="info-button" id="infoButton" type="button" hidden>Info uit cursus</button>
+        </section>
+
+        <section class="info-panel" id="infoPanel" hidden>
+          <div class="panel-head">
+            <h2>Info uit cursus</h2>
+            <button class="secondary subtle" id="closeInfoButton" type="button">Sluiten</button>
+          </div>
+          <div id="infoContent" class="info-content"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="data/questions.js"></script>
+    <script src="data/courseIndex.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
